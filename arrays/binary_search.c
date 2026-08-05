@@ -1,24 +1,5 @@
-/*
-=====================================================
-Binary Search Exercise
-=====================================================
-Program Purpose:
-    This program demonstrates the implementation and
-    comparison of Linear Search and Binary Search in C.
-
-Features:
-    - Generates a random integer array.
-    - Sorts the array using Bubble Sort.
-    - Searches for a user-provided value.
-    - Measures the number of steps required by each
-      search algorithm.
-
-Notes:
-    - This exercise is part of my Data Structures and
-      Algorithms (DSA) studies using the C language.
-    - The implementation is intended for learning
-      purposes and may be extended or improved later.
-=====================================================
+/* 
+this file is outdated, it'll be reviewed later
 */
 
 #include <stdio.h>
@@ -35,13 +16,15 @@ Purpose:
 */
 
 int bubble_sort(int *arr, int size) {
-    for (int i = 0; i < size; i++){
-        for (int j = i + 1; j < size; j++){
 
-            if (arr[i] > arr[j]){
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
+
+            if (arr[j] > arr[j + 1]) {
+                // Swap arr[j] and arr[j + 1]
                 int temp = arr[j];
-                arr[j] = arr[i];
-                arr[i] = temp;
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
             }
         }
     }
@@ -79,15 +62,17 @@ Purpose:
 */
 int binary_search(int *arr, int size, int target) {
 
-    int pivot = size / 2;
+    
     int start = 0;
     int end = size - 1;
     int total_steps = 0;
 
-    while (start < end) {
+    while (start <= end) {
+        int pivot = start + (start + end) / 2;
+
         total_steps++;
         printf("%d == %d\n", arr[pivot], target);
-        
+
         if (arr[pivot] == target){
             printf("total steps: %d\n", total_steps);
             return 1;
@@ -101,7 +86,6 @@ int binary_search(int *arr, int size, int target) {
             printf("moving the end pointer to %d\n", arr[end]);
         }
 
-        pivot = (start + end) / 2;
     }
 
     return -1;
