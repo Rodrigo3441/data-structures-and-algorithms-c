@@ -3,3 +3,15 @@
 
 # vscode settings
 .vscode/
+
+# layout files
+*.layout
+
+# object file
+*.o
+
+# compiler file
+*.win
+
+# project file
+*.dev
