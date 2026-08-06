@@ -15,7 +15,6 @@ int select_sort(int *arr, int size){
     		
     		if (arr[j] < arr[lowest]){
     			lowest = j;
-    			printf("New lowest value found: %d\n", lowest);
 			}
 				
 		}
