@@ -18,7 +18,7 @@ int main(void) {
     int values[20] = {84, 12, 67, 45, 93, 29, 51, 78, 36, 90, 14, 62, 73, 5, 88, 41, 99, 27, 50, 61};
     print_array(values, size);
 
-	merge_sort(values, 0, size);
+	merge_sort(values, 0, size-1);
 
 
 
